@@ -1,4 +1,10 @@
 url = 'https://bytebank.com/cambio?moedaOrigem=real'
+
+url = url.replace(' ', '')
+
+if url == '':
+    raise ValueError('A URL está vazia')
+
 print(url)
 
 index_interrogacao = url.find('?')
@@ -18,5 +24,5 @@ if index_e_comercial == -1:
 
 else:
     valor = url_parametros[index_valor:index_e_comercial]
-    
+
 print(valor)
