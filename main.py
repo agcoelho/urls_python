@@ -1,6 +1,6 @@
-url = 'https://bytebank.com/cambio?moedaOrigem=real'
+url = 'bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar'
 
-url = url.replace(' ', '')
+url = url.strip()
 
 if url == '':
     raise ValueError('A URL está vazia')
