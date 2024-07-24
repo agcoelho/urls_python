@@ -1,7 +1,9 @@
-url = 'bytebank.com/cambio?moedaOrigem=real'
+url = 'https://bytebank.com/cambio?moedaOrigem=real'
 print(url)
 
-url_base = url[0:19]
+index = url.find('?')
+
+url_base = url[0:index]
 print(url_base)
 
 url_parametros = url[20:]
