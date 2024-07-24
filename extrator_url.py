@@ -44,13 +44,24 @@ class ExtratorURL:
     def __len__(self):
         return len(self.url)
 
-
+    def __str__(self):
+        return self.url
+    def __eq__(self, other):
+        return self.url == other.url
 
 
 
 url = 'bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar'
 extrator_url = ExtratorURL('bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar')
 print('O tamanho da URL: ', len(extrator_url))
+print(extrator_url)
+
+extrator_url = ExtratorURL(url)
+extrator_url_2 = ExtratorURL(url)
+print(id(extrator_url))
+print(id(extrator_url_2))
+
+print(extrator_url == extrator_url_2)
 
 #extrator_url = ExtratorURL('bytebank.com/ca?quantidade=100&moedaOrigem=real&moedaDestino=dolar') #return url nao é valida
 #extrator_url = ExtratorURL(None) #return url vazia
